@@ -1,21 +1,28 @@
 /* eslint-disable react/prop-types */
+import { useContext } from 'react';
 import { MdAdd, MdRemove } from 'react-icons/md';
+import { QuantityContext } from '../context/QuantityContext';
 
 const FoodCard = ({ food }) => {
-  const removePiece = () => {};
-  const addPiece = () => {};
+  const { addPiece, removePiece } = useContext(QuantityContext);
 
   return (
-    <li className='w-full border-[1px] rounded-md border-zinc-100 h-20 shadow-sm flex items-center overflow-hidden justify-between px-4'>
+    <li className='w-full bg-zinc-900 shadow-md rounded-md border-zinc-100 p-2  flex items-center overflow-hidden justify-between px-4'>
       <div className=' flex items-center gap-4'>
         {/* <img src={food.image} alt='' className='w-20' /> */}
-        <p className='font-bold'>{food}</p>
+        <p className='font-medium text-sm'>{food.name}</p>
       </div>
 
       <div className=' flex items-center gap-4'>
-        <MdRemove className='text-red-500' onClick={removePiece} />
-        <p>{0}</p>
-        <MdAdd className='text-green-500' onClick={addPiece} />
+        <MdRemove
+          className='bg-zinc-600 rounded-full'
+          onClick={() => removePiece(food.id)}
+        />
+        <p>{food.quantity ? food.quantity : 0}</p>
+        <MdAdd
+          className='bg-zinc-600 rounded-full'
+          onClick={() => addPiece(food.id)}
+        />
       </div>
     </li>
   );

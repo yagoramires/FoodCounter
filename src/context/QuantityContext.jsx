@@ -37,6 +37,12 @@ export const QuantityProvider = ({ children }) => {
     localStorage.setItem('currentList', localStorageCurrentList);
   };
 
+  const clearCounter = () => {
+    localStorage.removeItem('currentList');
+
+    window.location.reload();
+  };
+
   useEffect(() => {
     const currentList = localStorage.getItem('currentList');
     if (currentList) {
@@ -48,7 +54,9 @@ export const QuantityProvider = ({ children }) => {
   }, []);
 
   return (
-    <QuantityContext.Provider value={{ foodList, addPiece, removePiece }}>
+    <QuantityContext.Provider
+      value={{ foodList, addPiece, removePiece, clearCounter }}
+    >
       {children}
     </QuantityContext.Provider>
   );

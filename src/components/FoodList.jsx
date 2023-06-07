@@ -16,7 +16,6 @@ const FoodList = () => {
   };
 
   const hideCategoryHandler = (categoryId) => {
-    console.log(categoryId);
     const handler = [...showCategory];
     handler[categoryId] = {
       category: handler[categoryId].category,
@@ -30,13 +29,13 @@ const FoodList = () => {
     const categoriesObject = [];
 
     categoryList.forEach((category) =>
-      categoriesObject.push({ category: category, show: false }),
+      categoriesObject.push({ category: category, show: true }),
     );
     setShowCategory(categoriesObject);
   }, []);
 
   return (
-    <ul className='flex flex-col gap-2 px-4 mt-8 max-w-[896px] mx-auto'>
+    <ul className='flex flex-col gap-2 px-4 mt-8 w-full max-w-[896px] mx-auto'>
       {categoryList?.map((category, index) => (
         <div key={index} className='flex flex-col mb-2 gap-[6px]'>
           <div className='flex justify-between items-center'>

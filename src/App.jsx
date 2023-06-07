@@ -9,13 +9,15 @@ function App() {
   return (
     <div className='App bg-zinc-800 min-h-screen text-white'>
       <Header />
-      <FoodList />
-      <button
-        onClick={clearCounter}
-        className='text-sm w-full text-center text-red-500'
-      >
-        Limpar
-      </button>
+      <div className='flex flex-col justify-between items-center min-h-[calc(100vh-100px)]'>
+        <FoodList />
+        <button
+          onClick={clearCounter}
+          className='text-sm w-full text-center text-red-500'
+        >
+          Limpar
+        </button>
+      </div>
     </div>
   );
 }

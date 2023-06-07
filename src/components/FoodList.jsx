@@ -29,7 +29,7 @@ const FoodList = () => {
     const categoriesObject = [];
 
     categoryList.forEach((category) =>
-      categoriesObject.push({ category: category, show: true }),
+      categoriesObject.push({ category: category, show: false }),
     );
     setShowCategory(categoriesObject);
   }, []);

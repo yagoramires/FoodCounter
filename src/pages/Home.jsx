@@ -28,7 +28,7 @@ const Home = () => {
         <>
           <button
             onClick={handleFinish}
-            className='mt-5 p-4 bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150 w-[calc(100%-32px)]'
+            className='mt-5 p-4 bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150 w-[calc(100%-32px)] w-full'
           >
             Concluir
           </button>

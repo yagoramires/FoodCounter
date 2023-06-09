@@ -27,6 +27,9 @@ const Price = () => {
     if (storagePrice && storagePrice > 0) {
       setUserPrice(Number(storagePrice));
     }
+
+    localStorage.removeItem('currentList');
+    localStorage.removeItem('userPrice');
   }, []);
 
   return (

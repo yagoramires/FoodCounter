@@ -39,6 +39,7 @@ export const QuantityProvider = ({ children }) => {
 
   const clearCounter = () => {
     localStorage.removeItem('currentList');
+    localStorage.removeItem('userPrice');
 
     window.location.reload();
   };

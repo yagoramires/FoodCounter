@@ -19,13 +19,13 @@ const Home = () => {
         <>
           <Link
             to='/result'
-            className='p-4 bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150 w-[calc(100%-32px)]'
+            className='mt-5 p-4 bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150 w-[calc(100%-32px)]'
           >
             Concluir
           </Link>
           <button
             onClick={clearCounter}
-            className='text-sm w-full text-center text-red-500 mt-4'
+            className='text-sm w-full text-center text-red-500 mt-4 mb-2'
           >
             Limpar
           </button>

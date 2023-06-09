@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuantityContext } from '../context/QuantityContext';
+import { RiArrowLeftSLine } from 'react-icons/ri';
 
 const Result = () => {
   const [result, setResult] = useState(0);
@@ -44,14 +45,18 @@ const Result = () => {
   }, []);
 
   return (
-    <div className='p-4 flex flex-col justify-center items-center min-h-[calc(100vh-72px)] w-full max-w-[896px] mx-auto'>
-      <button onClick={() => router(-1)} className='w-full text-start'>
+    <div className='p-4 flex flex-col justify-between items-center min-h-[calc(100vh-72px)] w-full max-w-[896px] mx-auto'>
+      <button
+        onClick={() => router(-1)}
+        className='w-full flex items-center text-lg gap-2'
+      >
+        <RiArrowLeftSLine />
         voltar
       </button>
 
       {loading && <p>Carregando ...</p>}
       {!loading && (
-        <div className='flex-1 flex flex-col justify-center items-center w-full gap-4'>
+        <div className='flex flex-col justify-center items-center w-full gap-4'>
           <div className='w-full flex justify-between items-center'>
             <p className='text-xl'>Valor pago:</p>
             <p className='font-bold text-xl'>

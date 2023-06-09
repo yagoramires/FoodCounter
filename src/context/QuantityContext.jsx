@@ -45,7 +45,7 @@ export const QuantityProvider = ({ children }) => {
     localStorage.removeItem('userPrice');
 
     navigate('/');
-    window.location.reload();
+    // window.location.reload();
   };
 
   useEffect(() => {

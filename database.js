@@ -449,4 +449,46 @@ export const foods = [
     name: 'Hot Crocante',
     unityPrice: 15,
   },
+  {
+    id: 75,
+    category: 'Sobremesas',
+    name: 'Harumaki de Chocolate',
+    unityPrice: 5,
+  },
+  {
+    id: 76,
+    category: 'Sobremesas',
+    name: 'Harumaki de Chocolate Branco',
+    unityPrice: 5,
+  },
+  {
+    id: 77,
+    category: 'Sobremesas',
+    name: 'Harumaki de Banana',
+    unityPrice: 5,
+  },
+  {
+    id: 78,
+    category: 'Sobremesas',
+    name: 'Harumaki Romeu e Julieta',
+    unityPrice: 5,
+  },
+  {
+    id: 79,
+    category: 'Sobremesas',
+    name: 'Roll de Banana',
+    unityPrice: 2,
+  },
+  {
+    id: 80,
+    category: 'Sobremesas',
+    name: 'Brownie',
+    unityPrice: 5,
+  },
+  {
+    id: 81,
+    category: 'Sobremesas',
+    name: 'Bola de sorvete',
+    unityPrice: 3,
+  },
 ];

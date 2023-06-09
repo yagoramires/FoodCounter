@@ -11,7 +11,7 @@ const Home = () => {
   const verifyIfHasItems = localStorage.getItem('currentList');
 
   return (
-    <div className='flex flex-col justify-center items-center min-h-[calc(100vh-100px)]  w-full max-w-[896px] mx-auto'>
+    <div className='flex flex-col justify-center items-center min-h-[calc(100vh-100px)]  w-full max-w-[896px] mx-auto p-4'>
       <Price />
       <FoodList />
 

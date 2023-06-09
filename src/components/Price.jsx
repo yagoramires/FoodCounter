@@ -26,7 +26,7 @@ const Price = () => {
   }, []);
 
   return (
-    <div className='w-full p-4'>
+    <div className='w-full mt-4'>
       {userPrice && (
         <div className='w-full flex justify-between items-center text-zinc-400'>
           <p>

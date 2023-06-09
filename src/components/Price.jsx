@@ -8,6 +8,10 @@ const Price = () => {
   const savePrice = (e) => {
     e.preventDefault();
 
+    if (newPrice === 0) {
+      return;
+    }
+
     setUserPrice(Number(newPrice));
     localStorage.setItem('userPrice', newPrice);
   };
@@ -48,13 +52,13 @@ const Price = () => {
         >
           <input
             type='number'
-            className='flex-1 p-2 px-4 bg-zinc-900 rounded-l-md outline-none'
+            className='flex-1 p-2 px-4 bg-zinc-900 rounded-l-md outline-none text-left'
             placeholder='Digite o valor do rodízio'
             onChange={(e) => setNewPrice(e.target.value)}
           />
           <input
             type='submit'
-            className='p-2 px-8 bg-orange-600 rounded-r-md cursor-pointer'
+            className='p-2 px-8 bg-orange-600 rounded-r-md cursor-pointer text-center'
           />
         </form>
       )}

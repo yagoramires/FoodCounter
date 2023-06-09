@@ -8,7 +8,7 @@ const Result = () => {
   const [result, setResult] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [loading, setLoading] = useState(true);
-  const router = useNavigate();
+  const navigate = useNavigate();
 
   const { clearCounter } = useContext(QuantityContext);
 
@@ -18,6 +18,10 @@ const Result = () => {
     setLoading(true);
 
     const userResult = JSON.parse(localStorage.getItem('currentList'));
+    if (userResult) {
+      navigate('/');
+      return;
+    }
 
     const selectedItemsFilter = userResult.filter(
       (item) => item.quantity && item.quantity > 0,
@@ -41,7 +45,7 @@ const Result = () => {
   return (
     <div className='p-4 flex flex-col justify-between items-center min-h-[calc(100vh-72px)] w-full max-w-[896px] mx-auto'>
       <button
-        onClick={() => router(-1)}
+        onClick={() => navigate(-1)}
         className='w-full flex items-center text-lg gap-2'
       >
         <RiArrowLeftSLine />

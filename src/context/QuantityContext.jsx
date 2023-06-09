@@ -2,11 +2,14 @@
 import { createContext, useEffect } from 'react';
 import { foods } from '../../database';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const QuantityContext = createContext({});
 
 export const QuantityProvider = ({ children }) => {
   const [foodList, setFoodList] = useState(foods);
+
+  const navigate = useNavigate();
 
   const removePiece = (foodId) => {
     const selectedFoodFilter = foodList.filter((food) => foodId === food.id);
@@ -41,6 +44,7 @@ export const QuantityProvider = ({ children }) => {
     localStorage.removeItem('currentList');
     localStorage.removeItem('userPrice');
 
+    navigate('/');
     window.location.reload();
   };
 

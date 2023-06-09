@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuantityContext } from '../context/QuantityContext';
-import { RiArrowLeftSLine } from 'react-icons/ri';
+import { RiArrowLeftSLine, RiSwordFill } from 'react-icons/ri';
+import { FaSadCry } from 'react-icons/fa';
 
 const Result = () => {
   const [result, setResult] = useState(0);
@@ -11,19 +12,12 @@ const Result = () => {
 
   const { clearCounter } = useContext(QuantityContext);
 
-  const navigate = useNavigate();
-
   const userPrice = Number(localStorage.getItem('userPrice')) * 1.1;
 
   useEffect(() => {
     setLoading(true);
 
     const userResult = JSON.parse(localStorage.getItem('currentList'));
-
-    if (!userResult) {
-      navigate('/');
-      return;
-    }
 
     const selectedItemsFilter = userResult.filter(
       (item) => item.quantity && item.quantity > 0,
@@ -56,10 +50,10 @@ const Result = () => {
 
       {loading && <p>Carregando ...</p>}
       {!loading && (
-        <div className='flex flex-col justify-center items-center w-full gap-4'>
+        <div className='flex flex-col justify-center items-center w-full gap-2'>
           <div className='w-full flex justify-between items-center'>
-            <p className='text-xl'>Valor pago:</p>
-            <p className='font-bold text-xl'>
+            <p className='text-lg'>Valor pago:</p>
+            <p className='font-bold text-lg'>
               {userPrice.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
@@ -67,21 +61,21 @@ const Result = () => {
             </p>
           </div>
           <div className='w-full flex justify-between items-center'>
-            <p className='text-xl'>Total de peças consumidas:</p>
-            <p className='font-bold text-xl'>{quantity}</p>
+            <p className='text-lg'>Total de peças consumidas:</p>
+            <p className='font-bold text-lg'>{quantity}</p>
           </div>
           <div className='w-full flex justify-between items-center'>
-            <p className='text-xl'>Valor das peças consumidas:</p>
-            <p className='font-bold text-xl'>
+            <p className='text-lg'>Valor das peças consumidas:</p>
+            <p className='font-bold text-lg'>
               {result.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
               })}
             </p>
           </div>
-          <div className='w-full flex justify-between items-center mt-10'>
+          <div className='w-full flex justify-between items-center mt-8'>
             <p className='text-xl'>Resultado:</p>
-            <p className='font-bold text-xl'>
+            <p className='font-bold text-lg'>
               {(result - userPrice).toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
@@ -90,12 +84,14 @@ const Result = () => {
           </div>
           <div className='w-full flex justify-between items-center mt-10'>
             {userPrice - result > 0 ? (
-              <p className='text-2xl text-center w-full'>
-                Poxa, você infelizmente perdeu a batalha contra o restaurante =(
+              <p className='text-xl text-center w-full flex flex-col items-center'>
+                Poxa, você infelizmente perdeu a batalha contra o restaurante..
+                <FaSadCry size={60} className='mt-2' />
               </p>
             ) : (
-              <p className='text-2xl text-center w-full'>
-                Parabéns!, você venceu a batalha contra o restaurante!!
+              <p className='text-xl text-center w-full flex flex-col items-center'>
+                Parabéns! você venceu a batalha contra o restaurante!!
+                <RiSwordFill size={60} className='mt-2' />
               </p>
             )}
           </div>

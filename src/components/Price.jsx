@@ -52,6 +52,8 @@ const Price = () => {
         >
           <input
             type='number'
+            min='0'
+            step='any'
             className='w-full p-2 px-4 bg-zinc-900 outline-none text-left'
             placeholder='Digite o valor do rodízio'
             onChange={(e) => setNewPrice(e.target.value)}

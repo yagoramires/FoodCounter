@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { QuantityContext } from '../context/QuantityContext';
 import { RiArrowLeftSLine, RiSwordFill } from 'react-icons/ri';
 import { FaSadCry } from 'react-icons/fa';
@@ -56,7 +56,10 @@ const Result = () => {
       {!loading && (
         <div className='flex flex-col justify-center items-center w-full gap-2'>
           <div className='w-full flex justify-between items-center'>
-            <p className='text-lg'>Valor pago:</p>
+            <p className='text-lg gap-2 flex items-center'>
+              Valor pago:
+              <span className='text-xs'>(calculamos os 10% pra vc!)</span>
+            </p>
             <p className='font-bold text-lg'>
               {userPrice.toLocaleString('pt-BR', {
                 style: 'currency',
@@ -101,12 +104,20 @@ const Result = () => {
           </div>
         </div>
       )}
-      <button
-        onClick={clearCounter}
-        className='p-4 w-full bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150'
-      >
-        Reiniciar
-      </button>
+      <div className='w-full flex flex-col justify-center items-center gap-4'>
+        <Link
+          to={'/result-details'}
+          className='p-4 w-full bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150'
+        >
+          Relatório detalhado
+        </Link>
+        <button
+          onClick={clearCounter}
+          className='p-4 w-full bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150'
+        >
+          Reiniciar
+        </button>
+      </div>
     </div>
   );
 };

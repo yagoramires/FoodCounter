@@ -18,7 +18,7 @@ const Result = () => {
     setLoading(true);
 
     const userResult = JSON.parse(localStorage.getItem('currentList'));
-    if (userResult) {
+    if (!userResult) {
       navigate('/');
       return;
     }

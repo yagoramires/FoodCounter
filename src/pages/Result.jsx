@@ -46,7 +46,7 @@ const Result = () => {
     <div className='p-4 flex flex-col justify-between items-center min-h-[calc(100vh-72px)] w-full max-w-[896px] mx-auto'>
       <button
         onClick={() => navigate(-1)}
-        className='w-full flex items-center text-lg gap-2'
+        className='w-full flex items-center text-sm font-bold gap-2'
       >
         <RiArrowLeftSLine />
         voltar
@@ -86,7 +86,7 @@ const Result = () => {
               })}
             </p>
           </div>
-          <div className='w-full flex justify-between items-center mt-10'>
+          <div className='w-full flex justify-between items-center mt-10 '>
             {userPrice - result > 0 ? (
               <p className='text-xl text-center w-full flex flex-col items-center'>
                 Poxa, você infelizmente perdeu a batalha contra o restaurante..
@@ -103,7 +103,7 @@ const Result = () => {
       )}
       <button
         onClick={clearCounter}
-        className='p-4 bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150 w-[calc(100%-32px)]'
+        className='p-4 w-full bg-zinc-900 text-center rounded-md hover:bg-zinc-950 transition-all duration-150'
       >
         Reiniciar
       </button>

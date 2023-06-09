@@ -21,6 +21,8 @@ const Home = () => {
 
   return (
     <div className='flex flex-col justify-center items-center min-h-[calc(100vh-100px)]  w-full max-w-[896px] mx-auto p-4'>
+      <p className='text-xs w-full text-center'>aqui é você contra o restaurante.</p>
+
       <Price />
       <FoodList />
 

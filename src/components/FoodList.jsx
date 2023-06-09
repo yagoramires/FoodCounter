@@ -35,7 +35,7 @@ const FoodList = () => {
   }, []);
 
   return (
-    <ul className='flex flex-col flex-1 gap-2 px-4 mt-8 w-full max-w-[896px] mx-auto'>
+    <ul className='flex flex-col flex-1 gap-2 px-4 mt-8  w-full max-w-[896px] mx-auto'>
       {categoryList?.map((category, index) => (
         <div key={index} className='flex flex-col mb-2 gap-[6px]'>
           <div className='flex justify-between items-center'>

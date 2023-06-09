@@ -28,7 +28,7 @@ const Price = () => {
   return (
     <div className='w-full mt-4'>
       {userPrice && (
-        <div className='w-full flex justify-between items-center text-zinc-400'>
+        <div className='w-full flex justify-between items-center text-zinc-400 '>
           <p>
             Valor do rodízio:{' '}
             {userPrice.toLocaleString('pt-BR', {
@@ -42,7 +42,10 @@ const Price = () => {
         </div>
       )}
       {!userPrice && (
-        <form onSubmit={savePrice} className='flex justify-center items-center'>
+        <form
+          onSubmit={savePrice}
+          className='flex justify-center items-center overflow-hidden rounded-md w-full'
+        >
           <input
             type='number'
             className='flex-1 p-2 px-4 bg-zinc-900 rounded-l-md outline-none'
